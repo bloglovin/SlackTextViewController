@@ -1685,9 +1685,11 @@ CGFloat const SLKAutoCompletionViewDefaultHeight = 140.0;
     
     self.autoCompletionViewHC.constant = viewHeight;
     
-    [self.view slk_animateLayoutIfNeededWithBounce:self.bounces
-                                           options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionLayoutSubviews|UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionAllowUserInteraction
-                                        animations:NULL];
+    [self.view layoutIfNeeded];
+    // OLDDDDDDDD
+    //    [self.view slk_animateLayoutIfNeededWithBounce:self.bounces
+    //                                           options:UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionLayoutSubviews|UIViewAnimationOptionBeginFromCurrentState|UIViewAnimationOptionAllowUserInteraction
+    //                                        animations:NULL];
 }
 
 - (void)showAutoCompletionViewWithPrefix:(NSString *)prefix andWord:(NSString *)word prefixRange:(NSRange)prefixRange
